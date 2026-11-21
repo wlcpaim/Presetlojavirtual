@@ -1,0 +1,14 @@
+:root {
+    /* Colors - Dark Slate Premium */
+    --bg-base: #020617;
+    --surface-card: #0f172a;
+    --border-color: #1e293b;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-emerald: #10b981;
+    
+    /* Effects */
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
