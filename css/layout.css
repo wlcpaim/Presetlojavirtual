@@ -1,0 +1,8 @@
+/* layout.css */
+#app { min-height: 100dvh; display: flex; flex-direction: column; }
+main { flex: 1; padding: 2rem 1rem; }
+
+/* components.css */
+.card { background: var(--surface-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; }
+.btn-primary { background: var(--accent-emerald); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-md); transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.9; }
