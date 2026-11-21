@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initRouter(currentState);
     lucide.createIcons();
   });
+  
+  window.addEventListener('popstate', () => {
+    initRouter(getState());
+  });
 
   // Initial trigger
   setState(getState());
