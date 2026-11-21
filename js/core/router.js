@@ -1,15 +1,26 @@
-export function initRouter() {
-    const app = document.getElementById('app');
-    const routes = {
-        '#/': 'Store',
-        '#/checkout': 'Checkout'
-    };
+import { renderStore } from '../pages/store.js';
+import { renderProductDetail } from '../pages/product-detail.js';
+import { renderCheckout } from '../pages/checkout.js';
 
-    function render() {
-        const hash = window.location.hash || '#/';
-        app.innerHTML = `<h1>${routes[hash] || 'Not Found'}</h1>`;
-    }
+export const initRouter = (state) => {
+  const hash = window.location.hash || '#/';
+  const mainContent = document.getElementById('main-content');
+  if (!mainContent) return;
 
-    window.addEventListener('hashchange', render);
-    render();
-}
+  if (hash === '#/' || hash === '') {
+    mainContent.innerHTML = renderStore(state);
+  } else if (hash.startsWith('#/produto/')) {
+    const id = hash.split('/')[2];
+    mainContent.innerHTML = renderProductDetail(state, id);
+  } else if (hash === '#/checkout') {
+    mainContent.innerHTML = renderCheckout(state);
+  } else {
+    mainContent.innerHTML = `<div class="p-8 text-center text-white text-xl">Página não encontrada</div>`;
+  }
+  lucide.createIcons();
+};
+
+window.addEventListener('hashchange', () => {
+  // Trigger state re-render via window dispatch or main subscription
+  window.dispatchEvent(new Event('popstate'));
+});
