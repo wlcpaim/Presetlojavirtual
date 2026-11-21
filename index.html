@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WLC Commerce Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans">
+    <div id="app"></div>
+
+    <!-- Core Scripts -->
+    <script type="module" src="js/core/db.js"></script>
+    <script type="module" src="js/core/state.js"></script>
+    <script type="module" src="js/core/router.js"></script>
+    <script type="module">
+        import { initRouter } from './js/core/router.js';
+        window.addEventListener('DOMContentLoaded', () => {
+            initRouter();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
