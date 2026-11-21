@@ -1,0 +1,4 @@
+/* components.css - continued */
+.cart-drawer { position: fixed; right: 0; top: 0; width: 350px; height: 100%; background: var(--surface-card); backdrop-filter: blur(10px); }
+.skeleton { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; background: var(--border-color); }
+@keyframes pulse { 50% { opacity: .5; } }
